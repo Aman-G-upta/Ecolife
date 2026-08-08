@@ -24,7 +24,7 @@ const COLORS = {
 };
 
 const NAV_LINKS = [
-  { path: "/", icon: Home, label: "Home" },
+  { path: "/dashboard", icon: Home, label: "Home" },
   { path: "/leaderboard", icon: Trophy, label: "Ranks" },
   { path: "/challenges", icon: Award, label: "Challenges" },
   { path: "/scanner", icon: ScanLine, label: "Scanner" },
