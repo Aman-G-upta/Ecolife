@@ -204,35 +204,46 @@ const Navbar = () => {
         /* ========== Mobile ========== */
         @media (max-width: 720px) {
           .navbar-inner {
-            padding: 8px 12px;
-            gap: 8px;
+            padding: 8px 10px;
+            gap: 6px;
           }
 
           .navbar-brand span.brand-text {
             display: none;
           }
+          .navbar-brand {
+            padding: 6px;
+          }
 
           .nav-rail {
             flex: 1;
-            justify-content: space-between;
+            justify-content: space-evenly;
             padding: 3px;
             gap: 0;
+            overflow-x: auto;
+            scrollbar-width: none;
           }
+          .nav-rail::-webkit-scrollbar { display: none; }
 
           .nav-item {
-            min-width: 0;
-            flex: 1;
-            height: 46px;
-            padding: 0 2px;
-            border-radius: 14px;
+            flex: 0 0 auto;
+            min-width: 40px;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            border-radius: 50%;
           }
 
+          /* Labels crowd/overlap at this width — icon + tooltip only */
           .nav-item-label {
-            font-size: 9.5px;
+            display: none;
           }
 
           .nav-btn {
-            padding: 9px 12px;
+            padding: 9px;
+            width: 38px;
+            height: 38px;
+            justify-content: center;
           }
           .nav-btn .btn-label {
             display: none;
@@ -241,11 +252,15 @@ const Navbar = () => {
 
         /* Very small phones */
         @media (max-width: 380px) {
+          .navbar-inner { gap: 4px; }
           .nav-item {
-            height: 44px;
+            width: 36px;
+            height: 36px;
           }
-          .nav-item-label {
-            font-size: 9px;
+          .nav-btn {
+            width: 34px;
+            height: 34px;
+            padding: 0;
           }
         }
       `}</style>

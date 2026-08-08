@@ -11,7 +11,12 @@ import {
   Sparkles,
 } from "lucide-react";
 
-
+/* ---------------------------------------------------------
+   EcoLife AI — Home (public landing page)
+   Same "Growth Ring" design language as the Dashboard:
+   deep forest palette, Fraunces display serif, tree-ring
+   motif as the recurring signature element.
+---------------------------------------------------------- */
 
 const COLORS = {
   bg: "#F4F7F1",
@@ -51,7 +56,8 @@ function useInView(threshold = 0.2) {
 }
 
 function RingCluster() {
- 
+  // Three concentric rings — illustrative, not live data —
+  // representing the three things the app tracks.
   const rings = [
     { r: 92, color: COLORS.primary, pct: 0.78 },
     { r: 70, color: COLORS.gold, pct: 0.55 },
@@ -277,8 +283,47 @@ const Home = () => {
         .cta-band .btn-primary:hover { box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
 
         /* --- footer --- */
-        .home-footer {
-          padding: 32px 24px 48px; text-align: center; color: ${COLORS.inkSoft}; font-size: 13px;
+        .site-footer {
+          border-top: 1px solid ${COLORS.border};
+          margin-top: 24px;
+          padding: 32px 24px;
+        }
+        .site-footer-inner {
+          max-width: 1120px;
+          margin: 0 auto;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+        }
+        .footer-brand {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          font-family: 'Fraunces', Georgia, serif;
+          font-weight: 600;
+          font-size: 15px;
+          color: ${COLORS.primary};
+        }
+        .footer-links {
+          display: flex;
+          align-items: center;
+          gap: 22px;
+        }
+        .footer-links a {
+          font-size: 13px;
+          color: ${COLORS.inkSoft};
+          text-decoration: none;
+          transition: color 0.15s ease;
+        }
+        .footer-links a:hover { color: ${COLORS.primary}; }
+        .footer-copy {
+          font-size: 12.5px;
+          color: ${COLORS.inkSoft};
+        }
+        @media (max-width: 560px) {
+          .site-footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
         }
 
         @keyframes rise { to { opacity: 1; transform: translateY(0); } }
@@ -398,7 +443,21 @@ const Home = () => {
         </Link>
       </div>
 
-      <div className="home-footer">EcoLife AI — built for the hackathon, made to keep the habit.</div>
+      <footer className="site-footer">
+        <div className="site-footer-inner">
+          <span className="footer-brand">
+            <Leaf size={16} /> EcoLife AI
+          </span>
+          <nav className="footer-links">
+            <Link to="/login">Log in</Link>
+            <Link to="/register">Get started</Link>
+            <a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
+              Back to top
+            </a>
+          </nav>
+          <span className="footer-copy">© 2026 Aman Gupta. All rights reserved.</span>
+        </div>
+      </footer>
     </div>
   );
 };

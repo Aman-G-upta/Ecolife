@@ -12,7 +12,13 @@ import { Leaf, Activity, Flame, RefreshCw, Sparkles } from "lucide-react";
 import API from "../services/api";
 import Navbar from "../components/Navbar";
 
-
+/* ---------------------------------------------------------
+   EcoLife AI — Dashboard
+   Design language: "Growth Ring" — greenScore is reframed as
+   a level system (100 pts per level) and visualized as a
+   tree-ring style progress ring, echoing the eco theme
+   instead of a generic stat/donut widget.
+---------------------------------------------------------- */
 
 const COLORS = {
   bg: "#F4F7F1",
@@ -27,7 +33,10 @@ const COLORS = {
   border: "#E1E8DC",
 };
 
-
+// ---- demo fallback so this preview always renders something ----
+// In your real app, remove this once the backend is reliably reachable —
+// or keep it as a graceful "offline demo mode" fallback for your hackathon
+// live demo in case the API hiccups on stage.
 function buildMockDashboard() {
   const today = new Date();
   const weeklyData = Array.from({ length: 7 }).map((_, i) => {
@@ -190,6 +199,22 @@ const Dashboard = () => {
           border: 1px solid ${COLORS.border};
           border-radius: 20px;
           padding: 28px 32px;
+        }
+        .hero-content {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          min-width: 0;
+        }
+        .hero-headline {
+          font-size: clamp(18px, 5vw, 26px);
+          margin: 0;
+          font-weight: 600;
+          line-height: 1.25;
+        }
+        @media (max-width: 560px) {
+          .hero-row { padding: 22px 20px; }
+          .hero-content { flex-direction: column; align-items: flex-start; gap: 16px; }
         }
 
         .refresh-btn {
@@ -383,11 +408,11 @@ const Dashboard = () => {
         ) : (
           <>
             <div className="hero-row">
-              <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+              <div className="hero-content">
                 <GrowthRing greenScore={data.greenScore} />
                 <div>
                   <p className="eyebrow">Your impact, growing</p>
-                  <h1 className="display" style={{ fontSize: 26, margin: 0, fontWeight: 600 }}>
+                  <h1 className="display hero-headline">
                     {data.streak > 0
                       ? `${data.streak}-day streak — keep it going`
                       : "Log an activity to start your streak"}
