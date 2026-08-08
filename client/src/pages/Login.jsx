@@ -40,7 +40,7 @@ const Login = () => {
 
     setSubmitting(true);
     try {
-      const url = "https://ecolife-ai.onrender.com/auth/login"; 
+      const url = "https://ecolife-ai.onrender.com/api/auth/login"; 
 
       const response = await fetch(url, {
         method: "POST",

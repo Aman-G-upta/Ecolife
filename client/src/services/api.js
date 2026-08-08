@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://ecolife-ai.onrender.com"
+  baseURL: "https://ecolife-ai.onrender.com/api"
 });
 
 API.interceptors.request.use((req) => {
