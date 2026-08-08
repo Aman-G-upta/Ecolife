@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* ========== EcoLife AI Toast Theme ========== */
+
+.eco-toast {
+  font-family: 'Inter', -apple-system, sans-serif !important;
+  border-radius: 14px !important;
+  padding: 14px 16px !important;
+  box-shadow: 0 10px 30px rgba(22, 36, 28, 0.12) !important;
+  border: 1px solid #E1E8DC !important;
+  background: #FFFFFF !important;
+  color: #16241C !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  min-height: 56px !important;
+}
+
+/* Success */
+.eco-toast-success {
+  border-left: 4px solid #1B4332 !important;
+}
+.eco-toast-progress-success {
+  background: #1B4332 !important;
+}
+
+/* Error */
+.eco-toast-error {
+  border-left: 4px solid #C1502E !important;
+}
+.eco-toast-progress-error {
+  background: #C1502E !important;
+}
+
+/* Info */
+.eco-toast-info {
+  border-left: 4px solid #D9A544 !important;
+}
+.eco-toast-progress-info {
+  background: #D9A544 !important;
+}
+
+/* Icon colors */
+.eco-toast-success .Toastify__toast-icon svg {
+  fill: #1B4332 !important;
+}
+.eco-toast-error .Toastify__toast-icon svg {
+  fill: #C1502E !important;
+}
+.eco-toast-info .Toastify__toast-icon svg {
+  fill: #D9A544 !important;
+}
+
+/* Close button */
+.Toastify__close-button {
+  color: #52796F !important;
+  opacity: 0.7;
+}
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+/* Progress bar height */
+.Toastify__progress-bar {
+  height: 3px !important;
+}
+
