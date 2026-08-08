@@ -39,7 +39,7 @@ const Register = () => {
 
     setSubmitting(true);
     try {
-      const url = "http://localhost:5000/api/auth/register"; 
+      const url = "https://ecolife-ai.onrender.com/auth/register"; 
 
       const response = await fetch(url, {
         method: "POST",

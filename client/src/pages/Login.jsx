@@ -40,7 +40,7 @@ const Login = () => {
 
     setSubmitting(true);
     try {
-      const url = "http://localhost:5000/api/auth/login"; // ✅ correct backend
+      const url = "https://ecolife-ai.onrender.com/auth/login"; 
 
       const response = await fetch(url, {
         method: "POST",
