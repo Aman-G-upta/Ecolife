@@ -37,7 +37,7 @@ An engaging web platform that helps users build environmentally friendly habits 
 - Instant estimated CO₂ impact
 - Clean card-based UI
 
-#### 🤖 AI Waste Scanner (Highlight Feature)
+#### 🤖 AI Waste Scanner (Our Flagship Feature)
 Upload a photo of any waste item and get instant, intelligent guidance powered by **Google Gemini AI**.
 
 - Identifies the exact item from the image
